@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import Detail from './components/Detail';
 import Header from './components/Header';
 import configureStore from './redux/store/configureStore';
+import './styles.scss';
 
 ReactDOM.render(
   <React.StrictMode>
