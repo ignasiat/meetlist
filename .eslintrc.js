@@ -29,7 +29,8 @@ module.exports = {
     }],
     'no-use-before-define': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
-    'import/extensions': [0, 'never']
+    'import/extensions': [0, 'never'],
+    'react/require-default-props': [0]
 
   }
 };
