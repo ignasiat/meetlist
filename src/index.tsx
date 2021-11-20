@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import {
   BrowserRouter, Routes, Route, Navigate
 } from 'react-router-dom';
-import Header from './Header';
-import Dashboard from './Dashboard';
-import Detail from './Detail';
+import Dashboard from './components/Dashboard';
+import Detail from './components/Detail';
+import Header from './components/Header';
 
 ReactDOM.render(
   <React.StrictMode>
