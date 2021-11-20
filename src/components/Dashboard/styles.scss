@@ -1,0 +1,31 @@
+.message--error {
+  color: red;
+  font-size: 20px;
+}
+
+.heroes-list__title {
+  width: 100%;
+  text-align: center;
+}
+
+.heroes-list__container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .heroe-card {
+    width: 250px;
+    margin: 15px;
+
+    .heroe-card__link {
+      text-decoration: none;
+      color: black;
+    }
+
+    // .heroe-card__title {
+    //   text-decoration-line: none;
+    //   color: black;
+    // }
+  }
+}
