@@ -30,7 +30,8 @@ module.exports = {
     'no-use-before-define': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
     'import/extensions': [0, 'never'],
-    'react/require-default-props': [0]
+    'react/require-default-props': [0],
+    'react/prop-types': [0]
 
   }
 };
