@@ -10,7 +10,7 @@ export const loadHeroesList = () => async (dispatch: Dispatch<HeroesActions>) =>
   const privateKey: string = process.env.REACT_APP_PRIVATE_KEY ?? '';
   const publicKey: string = process.env.REACT_APP_PUBLIC_KEY ?? '';
   const hash = md5(ts + privateKey + publicKey).toString();
-  const url = `${API_URL}?ts=${ts}&apikey=${publicKey}1&hash=${hash}`;
+  const url = `${API_URL}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
 
   try {
     const { data }: ApiResponseHeroes = await axios.get(url);
