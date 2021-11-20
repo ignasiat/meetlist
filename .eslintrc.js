@@ -31,10 +31,5 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
     'import/extensions': [0, 'never']
 
-  },
-  settings: {
-    'import/resolver': {
-      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
-    }
   }
 };
