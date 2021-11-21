@@ -1,15 +1,12 @@
 import axios from 'axios';
 import { Dispatch } from 'react';
-import md5 from 'md5';
 import { API_URL } from '../../constants/app.constants';
 import { ApiResponseHeroes, HeroesActions } from '../../types/app.types';
 import heroesActionsTypes from './heroesActionsTypes';
+import { getUrlParameters } from './heroActions.utils';
 
 export const loadHeroesList = () => async (dispatch: Dispatch<HeroesActions>) => {
-  const ts = new Date().getTime();
-  const privateKey: string = process.env.REACT_APP_PRIVATE_KEY ?? '';
-  const publicKey: string = process.env.REACT_APP_PUBLIC_KEY ?? '';
-  const hash = md5(ts + privateKey + publicKey).toString();
+  const { ts, publicKey, hash } = getUrlParameters();
   const url = `${API_URL}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
 
   try {
@@ -27,15 +24,15 @@ export const loadHeroesList = () => async (dispatch: Dispatch<HeroesActions>) =>
 };
 
 // eslint-disable-next-line arrow-body-style
-export const loadHeroeDetail = (heroId: string) => {
-  return async (dispatch: Dispatch<HeroesActions>) => {
-    const url = `${API_URL}/${heroId}ts=${process.env.REACT_APP_TS}&apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_API_HASH}`;
-
+export const loadHeroeDetail = (heroId: string, dispatch: Dispatch<HeroesActions>) => {
+  return (async () => {
+    const { ts, publicKey, hash } = getUrlParameters();
+    const url = `${API_URL}/${heroId}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
     try {
-      const { data: { results } } = await axios.get(url);
+      const { data } = await axios.get(url);
       dispatch({
         type: heroesActionsTypes.HEROE_DETAIL_LOAD_SUCCEED,
-        payload: results
+        payload: data.data.results[0]
       });
     } catch (error) {
       dispatch({
@@ -43,5 +40,5 @@ export const loadHeroeDetail = (heroId: string) => {
         payload: error
       });
     }
-  };
+  })();
 };
