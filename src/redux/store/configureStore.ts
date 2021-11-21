@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from '../reducers';
-import initialState from './initialState';
 
 declare global {
  export interface Window {
@@ -10,7 +9,7 @@ declare global {
   }
 }
 
-function configureStore() {
+function configureStore(initialState: any) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const middlewares = [thunkMiddleware, reduxImmutableStateInvariant()];
 
@@ -22,4 +21,4 @@ function configureStore() {
   );
 }
 
-export default configureStore();
+export default configureStore;

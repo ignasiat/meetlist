@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import {
   BrowserRouter, Routes, Route, Navigate
 } from 'react-router-dom';
+import initialState from '../redux/store/initialState';
 import Dashboard from '../components/Dashboard';
 import Detail from '../components/Detail';
 import Header from '../components/Header';
@@ -13,7 +14,7 @@ import './styles.scss';
 const App = ():void => {
   ReactDOM.render(
     <React.StrictMode>
-      <Provider store={configureStore}>
+      <Provider store={configureStore(initialState)}>
         <BrowserRouter>
           <Header />
           <Routes>

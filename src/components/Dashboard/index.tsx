@@ -7,8 +7,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators, Dispatch } from 'redux';
 import { loadHeroesList } from '../../redux/actions/heroesActionsCreators';
-import { RootState } from '../../redux/reducers';
-import { Heroe, HeroeState } from '../../types/app.types';
+import { Heroe, HeroeState, RootState } from '../../types/app.types';
 import './styles.scss';
 
 const mapStateToProps = (state: RootState) => ({

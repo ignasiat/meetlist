@@ -1,3 +1,7 @@
 export default {
-  heroes: undefined
+  heroes: {
+    heroesList: undefined,
+    heroeDetail: undefined,
+    heroeError: undefined
+  }
 };

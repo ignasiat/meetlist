@@ -11,8 +11,7 @@ import MenuBook from '@mui/icons-material/MenuBook';
 import Search from '@mui/icons-material/Search';
 import { loadHeroeDetail } from '../../redux/actions/heroesActionsCreators';
 import './styles.scss';
-import { RootState } from '../../redux/reducers';
-import { HeroeState } from '../../types/app.types';
+import { HeroeState, RootState } from '../../types/app.types';
 
 const Detail:React.FC = () => {
   const { id } = useParams();

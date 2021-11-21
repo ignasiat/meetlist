@@ -34,3 +34,7 @@ export type HeroeState = {
   heroeDetail: undefined | null | Heroe,
   heroeError: any | null | undefined
 }
+
+export type RootState = {
+  heroes: HeroeState
+}
