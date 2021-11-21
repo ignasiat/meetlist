@@ -1,10 +1,13 @@
+$header-color: #027cbf;
+
 .header__container {
   padding: 0 20px;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: $header-color;
+  font-weight: bold;
 
   &--left {
     display: flex;
@@ -21,7 +24,7 @@
       list-style: none;
 
       .nav__item {
-        color: white;
+        color: $header-color;
         text-decoration: none;
       }
     }
