@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {
   Card, CardContent, CardMedia, Typography
 } from '@mui/material';
@@ -29,14 +28,16 @@ type Props = {heroes: HeroeState} & mapDispatchToPropsType
 
 const Dashboard:React.FC<Props> = ({ heroes, actions }) => {
   useEffect(() => {
-    actions.loadHeroesList();
+    if (!heroes.heroesList) {
+      actions.loadHeroesList();
+    }
   }, []);
 
   return (
-    <div>
+    <main>
       {heroes.heroeError && (<p className="message--error">{heroes.heroeError.message}</p>)}
       {heroes.heroesList && (
-        <>
+        <article>
           <Box className="heroes-list__title">
             <Typography variant="h2" component="div" gutterBottom>
               Heroes dashboard
@@ -44,7 +45,7 @@ const Dashboard:React.FC<Props> = ({ heroes, actions }) => {
           </Box>
           <div className="heroes-list__container">
             {heroes.heroesList?.map((heroItem: Heroe):React.ReactElement => (
-              <Card key={heroItem.id} className="heroe-card" sx={{ maxWidth: 250 }}>
+              <Card key={heroItem.id} className="heroe-card">
                 <Link to={`/detail/${heroItem.id}`} className="heroe-card__link">
                   <CardMedia
                     component="img"
@@ -64,10 +65,9 @@ const Dashboard:React.FC<Props> = ({ heroes, actions }) => {
 
             ))}
           </div>
-        </>
+        </article>
       )}
-    </div>
-
+    </main>
   );
 };
 
