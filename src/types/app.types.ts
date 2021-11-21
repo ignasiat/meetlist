@@ -1,15 +1,14 @@
+type Url = {
+  type: string;
+  url: string;
+}
+
 export type Heroe = {
   id: number,
   name: string,
   description: string,
   modified: Date,
-  resourceURI: string,
-  urls: [
-    {
-      type: string,
-      url: string
-    }
-  ],
+  urls: Url[],
   thumbnail: {
     path: string,
     extension: string
