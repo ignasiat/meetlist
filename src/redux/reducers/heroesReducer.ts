@@ -10,18 +10,26 @@ export default function heroesReducer(state = {
   switch (action.type) {
     case heroesActionsTypes.HEROES_LIST_LOAD_SUCCEED:
       return {
-        heroesList: action.payload, heroeError: null, heroeDetail: null
+        ...state,
+        heroesList: action.payload
       };
     case heroesActionsTypes.HEROE_DETAIL_LOAD_SUCCEED:
       return {
-        heroesList: null,
-        heroeError: null,
+        ...state,
         heroeDetail: action.payload
       };
     case heroesActionsTypes.HEROES_LIST_LOAD_ERROR:
+      return {
+        ...state,
+        heroesList: null,
+        heroeError: action.payload
+
+      };
     case heroesActionsTypes.HEROE_DETAIL_LOAD_ERROR:
       return {
-        heroesList: null, heroeError: action.payload, heroeDetail: null
+        ...state,
+        heroeError: action.payload,
+        heroeDetail: null
       };
     default:
       return state;
