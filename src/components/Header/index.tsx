@@ -14,7 +14,7 @@ const Header:React.FC = () => {
       <div className="header__container--left">
         <img src={logo} alt="logo" />
         <Box>
-          <Typography variant="h4" component="div">
+          <Typography variant="h4" component="div" className="header__title" data-test-id="header-title">
             MeetList
           </Typography>
         </Box>

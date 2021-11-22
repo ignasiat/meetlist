@@ -38,7 +38,7 @@ const Dashboard:React.FC<Props> = ({ heroes, actions }) => {
       {heroes.heroesList && (
         <article>
           <Box className="heroes-list__title">
-            <Typography variant="h2" component="div" gutterBottom>
+            <Typography variant="h2" component="div" gutterBottom data-test-id="dashboard__title">
               Heroes dashboard
             </Typography>
           </Box>
@@ -54,7 +54,7 @@ const Dashboard:React.FC<Props> = ({ heroes, actions }) => {
                     alt={heroItem.name}
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" className="heroe-card__title">
+                    <Typography gutterBottom variant="h5" component="div" className="heroe-card__title" data-test-id={`hero-card__title-${heroItem.id}`}>
                       {heroItem.name}
                     </Typography>
                   </CardContent>

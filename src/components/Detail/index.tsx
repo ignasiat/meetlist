@@ -50,6 +50,7 @@ const Detail:React.FC = () => {
               component="div"
               gutterBottom
               className="hero-detail__title"
+              data-test-id="hero-detail__title"
             >
               {heroes.heroeDetail.name}
 
