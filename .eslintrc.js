@@ -2,12 +2,14 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
+    'cypress/globals': true
   },
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    'plugin:import/typescript'
+    'plugin:import/typescript',
+    'plugin:cypress/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
