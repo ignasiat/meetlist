@@ -31,7 +31,7 @@ export type HeroesActions = {
 export type HeroeState = {
   heroesList: undefined | null | Heroe[],
   heroeDetail: undefined | null | Heroe,
-  heroeError: any | null | undefined
+  heroeError: any
 }
 
 export type RootState = {
