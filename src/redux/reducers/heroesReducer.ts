@@ -2,7 +2,7 @@
 import { HeroesActions, HeroeState } from '../../types/app.types';
 import heroesActionsTypes from '../actions/heroesActionsTypes';
 
-export default function heroesReducer(state = {
+export default function heroesReducer(state: HeroeState = {
   heroesList: undefined,
   heroeDetail: undefined,
   heroeError: undefined
